@@ -1,7 +1,7 @@
 services:
    vprodb:
       build:
-         context: ./Docker-files/db
+         context: ./db
       image: sayuj739/vprofiledb
       container_name: vprodb
       ports:
@@ -24,7 +24,7 @@ services:
         - RABBITMQ_DEFAULT_PASS=guest
    vproapp:
       build:
-         context: ./Docker-files/app
+         context: ./app
       image: sayuj739/vprofileapp
       container_name: vproapp
       ports:
@@ -33,7 +33,7 @@ services:
         - vproappdata:/var/lib/mysql
    vproweb:
       build:
-         context: ./Docker-files/web
+         context: ./web
       image: sayuj739/vprofileweb
       container_name: vproweb
       ports:
